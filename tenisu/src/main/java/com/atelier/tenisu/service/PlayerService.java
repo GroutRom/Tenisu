@@ -94,21 +94,19 @@ public class PlayerService {
 
     public float getMedianHeight(Iterable<Player> players) {
         List<Float> heights = new ArrayList();
-        float median = 0;
         for(Player player : players) {
-            heights.add((float) player.getData().getHeight()/100);
+            heights.add((float) player.getData().getHeight());
         }
         Collections.sort(heights);
-        if(heights.size()%2 == 0){
-            int indexInf = heights.size()/2;
-            int indexSup = indexInf + 1;
-            median = ((heights.get(indexSup)+heights.get(indexInf))/2);
-
+        int size = heights.size();
+        if (size == 0) {
+            return 0; 
+        } else if (size % 2 == 0) {
+            int indexInf = size / 2 - 1;
+            int indexSup = size / 2;
+            return (heights.get(indexInf) + heights.get(indexSup)) / 2;
+        } else {
+            return heights.get(size / 2);
         }
-        else {
-            int index = (heights.size()+1)/2;
-            median = heights.get(index);
-        }
-        return median;
     }
 }

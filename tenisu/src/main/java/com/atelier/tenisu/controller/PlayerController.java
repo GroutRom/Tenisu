@@ -19,6 +19,9 @@ public class PlayerController {
     @Autowired
     private PlayerService playerService;
 
+    /**
+     * @param playerService
+     */
     public PlayerController(PlayerService playerService){
         this.playerService = playerService;
     }

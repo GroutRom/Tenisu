@@ -21,6 +21,10 @@ public class TenisuApplication {
 		SpringApplication.run(TenisuApplication.class, args);
 	}
 
+	/**
+	 * @param playerService
+	 * @return
+	 */
 	@Bean
     CommandLineRunner runner(PlayerService playerService) {
         return args -> {

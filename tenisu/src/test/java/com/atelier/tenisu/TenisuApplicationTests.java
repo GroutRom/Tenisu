@@ -97,8 +97,8 @@ class TenisuApplicationTests {
         players.add(player1);
         players.add(player2);
 
-        float imc1 = 23.37472f;
-        float imc2 = 22.83950f;
+        float imc1 = 23.374727f;
+        float imc2 = 22.839506f;
 		Map<String, Float> imcMap = playerService.getIMC(players);
 		assertThat(imcMap.get("N.DJO")).isEqualTo(imc1);
 		assertThat(imcMap.get("S.WIL")).isEqualTo(imc2);    
